@@ -1,0 +1,5 @@
+.container {
+  background: no-repeat top/contain url("../assets/images/contacts.png");
+  width: 100%;
+  height: calc(100% - 75px);
+}
