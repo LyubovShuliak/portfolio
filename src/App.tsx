@@ -20,14 +20,16 @@ function App() {
       <Router>
         <HeaderComponent />
         <Routes>
+          <Route path="/portfolio" element={<HomePage />} />
+          <Route path={"/portfolio/" + navItems[0]} element={<SkillsPage />} />
           <Route
-            path="/"
-            element={<HomePage />}
-            errorElement={<NotFoundPage />}
+            path={"/portfolio/" + navItems[1]}
+            element={<ProjectsPage />}
           />
-          <Route path={"/" + navItems[0]} element={<SkillsPage />} />
-          <Route path={"/" + navItems[1]} element={<ProjectsPage />} />
-          <Route path={"/" + navItems[2]} element={<ContactsPage />} />
+          <Route
+            path={"/portfolio/" + navItems[2]}
+            element={<ContactsPage />}
+          />
 
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
