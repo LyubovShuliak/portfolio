@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4ab4cb5c.css",
-    "main.js": "/static/js/main.38f6d931.js",
+    "main.js": "/static/js/main.7c22d8a4.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/background.jpeg": "/static/media/background.6e8dc814ad42cd60ff0b.jpeg",
     "static/media/CV_Shuliak_Liubov.pdf": "/static/media/CV_Shuliak_Liubov.a053bd47d034428eba6a.pdf",
@@ -9,11 +9,11 @@
     "static/media/photo.png": "/static/media/photo.d7dca40af9bea39d62d5.png",
     "index.html": "/index.html",
     "main.4ab4cb5c.css.map": "/static/css/main.4ab4cb5c.css.map",
-    "main.38f6d931.js.map": "/static/js/main.38f6d931.js.map",
+    "main.7c22d8a4.js.map": "/static/js/main.7c22d8a4.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ab4cb5c.css",
-    "static/js/main.38f6d931.js"
+    "static/js/main.7c22d8a4.js"
   ]
 }
