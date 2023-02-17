@@ -5,6 +5,7 @@ import {
   Routes,
   Route,
   Navigate,
+  HashRouter,
 } from "react-router-dom";
 import HomePage from "./pages/Home.page";
 import NotFoundPage from "./components/NotFound.page";
@@ -17,24 +18,18 @@ export const navItems = ["skills", "projects", "contacts"];
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <HeaderComponent />
         <Routes>
-          <Route path="/portfolio" element={<HomePage />} />
-          <Route path={"/portfolio/" + navItems[0]} element={<SkillsPage />} />
-          <Route
-            path={"/portfolio/" + navItems[1]}
-            element={<ProjectsPage />}
-          />
-          <Route
-            path={"/portfolio/" + navItems[2]}
-            element={<ContactsPage />}
-          />
+          <Route path="/" element={<HomePage />} />
+          <Route path={"/" + navItems[0]} element={<SkillsPage />} />
+          <Route path={"/" + navItems[1]} element={<ProjectsPage />} />
+          <Route path={"/" + navItems[2]} element={<ContactsPage />} />
 
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

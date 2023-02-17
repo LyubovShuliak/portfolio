@@ -81,7 +81,7 @@ export function HeaderComponent(props: Props) {
           <Button
             sx={{ paddingLeft: "4vw", fontFamily: "AppBar", flexGrow: 1 }}
             onClick={() => {
-              navigate("/portfolio");
+              navigate("/");
             }}
           >
             <Typography
@@ -131,7 +131,7 @@ export function HeaderComponent(props: Props) {
                     transition: ".9s",
                   }}
                   onClick={() => {
-                    navigate(`portfolio/${item}`);
+                    navigate(`/${item}`);
 
                     setSelectedButton(i);
                   }}
