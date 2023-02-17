@@ -1,21 +1,9 @@
-import {
-  Box,
-  CardMedia,
-  IconButton,
-  Paper,
-  Stack,
-  styled,
-  useMediaQuery,
-} from "@mui/material";
-import React from "react";
+import { Box, CardMedia, Stack, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import CardContent from "@mui/material/CardContent";
 
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
 
 const HomePage = () => {
   const matchesLaptop = useMediaQuery("(min-width:1024px)");
@@ -23,10 +11,8 @@ const HomePage = () => {
   return (
     <Stack
       sx={{
-        marginTop: "75px",
-        height: "calc(100% - 75px)",
         width: "100%",
-        backgroundColor: "rgba(27, 16, 97, 0.49)",
+        marginTop: "30px",
       }}
       direction={{
         xs: !matchesLaptop ? "column" : "row",

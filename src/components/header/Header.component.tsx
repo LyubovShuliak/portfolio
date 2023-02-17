@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useLocation, useNavigate, useRoutes } from "react-router-dom";
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { navItems } from "../../App";
 
 interface Props {
@@ -26,6 +26,7 @@ const drawerWidth = 240;
 export function HeaderComponent(props: Props) {
   const route = useLocation();
   const matchesLaptop = useMediaQuery("(min-width:1024px)");
+  const theme = useTheme();
   const navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -74,7 +75,12 @@ export function HeaderComponent(props: Props) {
             backgroundColor: "rgba(144, 217, 240, 0.33)",
             boxShadow: "none",
           },
-          height: "75px",
+          [theme.breakpoints.down("sm")]: {
+            height: "56px",
+          },
+          [theme.breakpoints.up("sm")]: {
+            height: "75px",
+          },
         }}
       >
         <Toolbar>
@@ -154,7 +160,7 @@ export function HeaderComponent(props: Props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ backgroundColor: "rgba(144, 217, 240, 0.33)" }}
+        sx={{ backgroundColor: "rgba(144, 217, 240, 0.33)", height: 70 }}
       >
         <Drawer
           container={container}
@@ -162,12 +168,12 @@ export function HeaderComponent(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
 
-            "& .MuiDrawer-paper": {
+            "&.MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
               backgroundColor: "rgba(144, 217, 240, 0.88)",

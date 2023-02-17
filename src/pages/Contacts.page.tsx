@@ -7,6 +7,7 @@ import {
   ListItemButton,
   ListItemIcon,
   Tooltip,
+  Typography,
   useTheme,
 } from "@mui/material";
 
@@ -70,7 +71,39 @@ const ContactsPage = () => {
           minWidth: "200px",
         }}
       >
-        <List dense>
+        <List dense disablePadding>
+          <ListItem
+            sx={{
+              justifyContent: "center",
+              backgroundColor: "rgba(144, 217, 220, 0.32)",
+              borderColor: "rgba(144, 217, 240, 0.56)",
+              borderStyle: "solid",
+              borderWidth: "0px 0px 2px 0px",
+              padding: 2,
+            }}
+          >
+            <Typography
+              variant="h2"
+              alignContent={"center"}
+              sx={{
+                color: "white",
+                textAlign: "center",
+                fontFamily: "AppBar",
+                [theme.breakpoints.between("sm", "md")]: {
+                  fontSize: "25px",
+                },
+                [theme.breakpoints.up("md")]: {
+                  fontSize: "30px",
+                },
+                [theme.breakpoints.down("sm")]: {
+                  fontSize: "15px",
+                },
+                fontWeight: "bold",
+              }}
+            >
+              Contacts
+            </Typography>
+          </ListItem>
           <ListItem>
             <Tooltip title="Go to Telegram" placement="top">
               <ListItemButton href="https://t.me/Lyubov9811" target={"_blank"}>
@@ -93,7 +126,7 @@ const ContactsPage = () => {
               </ListItemButton>
             </Tooltip>
 
-            <Tooltip title="Copy telegram name" placement="right">
+            <Tooltip title="Copy telegram nickname" placement="right">
               <Button
                 onClick={() => copyContent("@Lyubov9811")}
                 startIcon={<ContentCopy sx={{ color: "black" }} />}
