@@ -18,7 +18,7 @@ export const navItems = ["skills", "projects", "contacts"];
 function App() {
   return (
     <div className="App">
-      <HashRouter>
+      <Router>
         <HeaderComponent />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
-      </HashRouter>
+      </Router>
     </div>
   );
 }
