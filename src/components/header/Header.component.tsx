@@ -131,7 +131,7 @@ export function HeaderComponent(props: Props) {
                     transition: ".9s",
                   }}
                   onClick={() => {
-                    navigate(`/${item}`);
+                    navigate(`portfolio/${item}`);
 
                     setSelectedButton(i);
                   }}
