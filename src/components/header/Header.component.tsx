@@ -81,7 +81,7 @@ export function HeaderComponent(props: Props) {
           <Button
             sx={{ paddingLeft: "4vw", fontFamily: "AppBar", flexGrow: 1 }}
             onClick={() => {
-              navigate("/");
+              navigate("/portfolio");
             }}
           >
             <Typography
