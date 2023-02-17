@@ -90,7 +90,7 @@ const HomePage = () => {
       <CardMedia
         component="img"
         sx={{
-          width: "45%",
+          width: "40%",
           minWidth: "250px",
           "&.MuiCardMedia-img": {
             objectFit: "contain",

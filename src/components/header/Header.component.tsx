@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useRoutes } from "react-router-dom";
 import { useMediaQuery } from "@mui/material";
 import { navItems } from "../../App";
 
@@ -24,6 +24,7 @@ interface Props {
 const drawerWidth = 240;
 
 export function HeaderComponent(props: Props) {
+  const route = useLocation();
   const matchesLaptop = useMediaQuery("(min-width:1024px)");
   const navigate = useNavigate();
   const { window } = props;
@@ -36,14 +37,16 @@ export function HeaderComponent(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Shuliak Liubov
-      </Typography>
+      <Button onClick={() => navigate("/")}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          Shuliak Liubov
+        </Typography>
+      </Button>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton sx={{ textAlign: "center" }} href={`/${item}`}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -54,7 +57,13 @@ export function HeaderComponent(props: Props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
+  useEffect(() => {
+    if (route.pathname.slice(1)) {
+      setSelectedButton(navItems.indexOf(route.pathname.slice(1)));
+    } else {
+      setSelectedButton(0);
+    }
+  }, [route]);
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -91,7 +100,7 @@ export function HeaderComponent(props: Props) {
                 display: { xs: "none", sm: "block" },
                 color: "#4BEBC6",
                 textAlign: "left",
-                fontSize: `20px`,
+                fontSize: `${matchesLaptop ? "25px" : "18px"}`,
                 fontFamily: "AppBar",
               }}
             >
@@ -143,7 +152,10 @@ export function HeaderComponent(props: Props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
+      <Box
+        component="nav"
+        sx={{ backgroundColor: "rgba(144, 217, 240, 0.33)" }}
+      >
         <Drawer
           container={container}
           variant="temporary"
@@ -154,9 +166,11 @@ export function HeaderComponent(props: Props) {
           }}
           sx={{
             display: { xs: "block", sm: "none" },
+
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "rgba(144, 217, 240, 0.88)",
             },
           }}
         >
