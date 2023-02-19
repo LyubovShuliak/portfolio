@@ -1,16 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "AppBar";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "AppBar";
 }
 
 @font-face {
@@ -18,3 +14,7 @@ code {
   src: url(./assets/fonts/Gentium_Book_Plus/GentiumBookPlus-Bold.ttf);
   font-weight: bold;
 }
+/* .slick-next:before,
+.slick-prev:before {
+  content: "";
+} */

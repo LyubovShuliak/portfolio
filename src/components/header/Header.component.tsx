@@ -62,7 +62,7 @@ export function HeaderComponent(props: Props) {
     if (route.pathname.slice(1)) {
       setSelectedButton(navItems.indexOf(route.pathname.slice(1)));
     } else {
-      setSelectedButton(0);
+      setSelectedButton(navItems.length);
     }
   }, [route]);
   return (
@@ -172,11 +172,11 @@ export function HeaderComponent(props: Props) {
           }}
           sx={{
             display: { xs: "block", sm: "none" },
-
-            "&.MuiDrawer-paper": {
+            backgroundColor: "rgba(144, 217, 240, 0.21)",
+            ".MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "rgba(144, 217, 240, 0.88)",
+              backgroundColor: "rgba(144, 217, 240, 0.78)",
             },
           }}
         >

@@ -4,7 +4,6 @@ import { FC } from "react";
 
 const ContactItemComponent: FC<{
   theme: Theme;
-
   text: string;
 }> = ({ theme, text }) => {
   return (
